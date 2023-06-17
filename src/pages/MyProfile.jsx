@@ -1,8 +1,9 @@
 import React from 'react';
+import MyProfileLogic from '../components/myprofile/MyProfileLogic';
 
 function MyProfile() {
   return (
-    <div>MyProfile</div>
+    <MyProfileLogic />
   );
 }
 

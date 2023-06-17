@@ -1,8 +1,9 @@
 import React from 'react';
+import MissionsLogic from '../components/missions/MissionsLogic';
 
 function Missions() {
   return (
-    <div>Missions</div>
+    <MissionsLogic />
   );
 }
 
