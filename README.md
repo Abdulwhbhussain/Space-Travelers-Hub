@@ -152,7 +152,7 @@ To run the project, execute the following command:
 
 > Here is the Link to this Live Project:
 
-> https://bookstore-react-redux-three.vercel.app
+> https://space-travelers-hub-three.vercel.app/
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
