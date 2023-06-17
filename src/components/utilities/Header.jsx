@@ -63,6 +63,7 @@ function Header() {
             <li>
               <NavLink to="/missions" style={{ textDecoration: 'none', color: '#3366CC' }} activeClassName="active">Missions</NavLink>
             </li>
+            <span>|</span>
             <li>
               <NavLink to="/profile" style={{ textDecoration: 'none', color: '#3366CC' }} activeClassName="active">My Profile</NavLink>
             </li>
