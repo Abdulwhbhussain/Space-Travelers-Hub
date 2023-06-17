@@ -1,0 +1,30 @@
+.active {
+  text-decoration: underline !important;
+}
+
+@media screen and (max-width: 700px) {
+  .title {
+    display: none !important;
+  }
+  nav {
+    width: 80% !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .title {
+    width: 40% !important;
+  }
+  nav {
+    width: 60% !important;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .title {
+    width: 60% !important;
+  }
+  nav {
+    width: 40% !important;
+  }
+}
