@@ -58,13 +58,13 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <NavLink to="/" exact style={{ textDecoration: 'none', color: '#000' }} activeClassName="active">Rockets</NavLink>
+              <NavLink to="/" exact style={{ textDecoration: 'none', color: '#3366CC' }} activeClassName="active">Rockets</NavLink>
             </li>
             <li>
-              <NavLink to="/missions" style={{ textDecoration: 'none', color: '#000' }} activeClassName="active">Missions</NavLink>
+              <NavLink to="/missions" style={{ textDecoration: 'none', color: '#3366CC' }} activeClassName="active">Missions</NavLink>
             </li>
             <li>
-              <NavLink to="/profile" style={{ textDecoration: 'none', color: '#000' }} activeClassName="active">My Profile</NavLink>
+              <NavLink to="/profile" style={{ textDecoration: 'none', color: '#3366CC' }} activeClassName="active">My Profile</NavLink>
             </li>
           </ul>
         </nav>
