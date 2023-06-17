@@ -26,6 +26,7 @@ const StyledHeader = styled.header`
     }
   }
   nav {
+    min-width: 325px !important;
     width: 30%;
     ul {
       display: flex;
