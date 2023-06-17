@@ -19,9 +19,9 @@
     - [1- Html](#1--html)
     - [2- CSS](#2--css)
     - [3- Javascript](#3--javascript)
-    - [4- NPM](#4--npm)
-    - [5- React](#5--react)
-    - [6- Redux](#6--redux)
+    - [4- React](#4--react)
+    - [5- Redux](#5--redux)
+    - [6- Jest](#6--jest)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
@@ -48,16 +48,17 @@
 
 # 📖 Microverse Space Travelers' Hub React Project Module 3 <a name="about-project"></a>
 
-The Bookstore is a website similar to the "Awesome Books" website built in the previous module. It has a simple UI that displays a list of books and allows you to add and remove books. it is built with React and Redux. Use 'vercel --prod' to deploy the project to production. 
+We will be working with the real live data from the SpaceX API. Our task is to build a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions. Use 'vercel --prod' to deploy the project to production. 
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### 1- Html
 ### 2- CSS
 ### 3- Javascript
-### 4- NPM
-### 5- React
-### 6- Redux
+### 4- React
+### 5- Redux
+### 6- Jest
+
 
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -69,9 +70,9 @@ The Bookstore is a website similar to the "Awesome Books" website built in the p
     <li><a>Html</a></li>
     <li><a>Css</a></li>
     <li><a>Javascript</a></li>
-    <li><a>NPM</a></li>
     <li><a>React</a></li>
     <li><a>Redux</a></li>
+    <li><a>Jest</a></li>
   </ul>
 </details>
 
@@ -120,7 +121,7 @@ Run This Command:
 
 ```sh
   cd my-folder
-  git clone https://github.com/Abdulwhbhussain/Bookstore-React-Microverse.git
+  git clone https://github.com/Abdulwhbhussain/Space-Travelers-Hub.git
 ```
 
 
