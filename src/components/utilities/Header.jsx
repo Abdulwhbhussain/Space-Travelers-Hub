@@ -35,7 +35,6 @@ const StyledHeader = styled.header`
         margin: 0 1rem;
         color: #3366CC !important;
         &:hover {
-          font-weight: bold;
           text-decoration: underline;
           color: #3366CC !important;
         }
