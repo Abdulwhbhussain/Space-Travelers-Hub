@@ -4,51 +4,41 @@ import { useSelector } from 'react-redux';
 function MyProfileLogic() {
   const { rockets } = useSelector((state) => state.rockets);
   const { missions } = useSelector((state) => state.missions);
+  console.log(rockets);
+  console.log(missions);
 
-  const filteredRockets = rockets.filter((rocket) => {
-    if (rocket.reserved) {
-      return true;
-    }
-    return false;
-  });
+  const filteredRockets = rockets.filter((rocket) => rocket.reserved === true);
 
-  const filteredMissions = missions.filter((mission) => {
-    if (mission.reserved) {
-      return true;
-    }
-    return false;
-  });
-
-  let reservedRockets = [];
-  let reservedMissions = [];
+  const filteredMissions = missions.filter((mission) => mission.reserved === true);
+  console.log(filteredMissions);
+  console.log(filteredRockets);
 
   useEffect(() => {
-    reservedRockets = filteredRockets();
-    reservedMissions = filteredMissions();
+    console.log('useEffect');
   });
 
   return (
     <div style={{
       width: '100%',
-      margin: '2rem',
+      padding: '0rem',
       height: 'fit-content',
       display: 'flex',
     }}
     >
-      <div style={{ width: '50%' }}>
+      <div style={{ width: '40%' }}>
         <h2>My Missions</h2>
         <hr />
-        {reservedMissions.map((mission) => (
+        {filteredMissions.map((mission) => (
           <>
             <div>{mission.name}</div>
             <hr />
           </>
         ))}
       </div>
-      <div style={{ width: '50%' }}>
+      <div style={{ width: '40%' }}>
         <h2>My Rockets</h2>
         <hr />
-        {reservedRockets.map((rocket) => (
+        {filteredRockets.map((rocket) => (
           <>
             <div>{rocket.name}</div>
             <hr />

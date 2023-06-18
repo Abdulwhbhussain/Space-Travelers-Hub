@@ -20,7 +20,7 @@ function MissionsLogic() {
   if (error) return <div>{error}</div>;
 
   return (
-    <div style={{ width: '100%', margin: '2rem', height: 'fit-content' }}>
+    <div style={{ width: '100%', padding: '0', height: 'fit-content' }}>
       <MissionsList missions={missions} />
     </div>
   );
