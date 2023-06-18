@@ -2,7 +2,7 @@ import React from 'react';
 
 function MyProfileLogic() {
   return (
-    <div>MyProfileLogic</div>
+    <div style={{ width: '100%', margin: '2rem', height: 'fit-content' }}>MyProfileLogic</div>
   );
 }
 

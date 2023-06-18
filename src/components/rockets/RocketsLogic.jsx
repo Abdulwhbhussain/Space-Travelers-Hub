@@ -1,14 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRockets } from '../../redux/rockets/rocketsSlice';
-import styled from 'styled-components';
+import RocketsList from './RocketsList';
 import '../utilities/styles/Loader.css';
-
-const styledDiv = styled.div`
-  width: 100%;
-  margin: 2rem;
-  height: fit-content;
-`;
 
 function RocketsLogic() {
   const { rockets, isLoading, error } = useSelector((state) => state.rockets);
@@ -26,7 +20,9 @@ function RocketsLogic() {
   if (error) return <div>{error}</div>;
 
   return (
-    <styledDiv>RocketsLogic</styledDiv>
+    <div style={{ width: '100%', margin: '2rem', height: 'fit-content' }}>
+      <RocketsList rockets={rockets} />
+    </div>
   );
 }
 
