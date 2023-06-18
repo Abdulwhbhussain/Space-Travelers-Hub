@@ -19,7 +19,6 @@ function RocketsLogic() {
   if (error) return <div>{error}</div>;
 
   return (
-
     <div>RocketsLogic</div>
   );
 }
