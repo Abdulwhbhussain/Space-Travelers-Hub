@@ -35,7 +35,7 @@ Rocket.propTypes = {
     description: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     wikipedia: PropTypes.string.isRequired,
-    reserved: PropTypes.bool.isRequired,
+    reserved: PropTypes.bool,
   }).isRequired,
 };
 
