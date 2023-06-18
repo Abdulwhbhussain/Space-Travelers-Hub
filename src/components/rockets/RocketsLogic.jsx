@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRockets } from '../../redux/rockets/rocketsSlice';
-import '../utilities/styles/Loader.css'
+import '../utilities/styles/Loader.css';
 
 function RocketsLogic() {
   const { rockets, isLoading, error } = useSelector((state) => state.rockets);
