@@ -24,6 +24,7 @@ export const getRockets = createAsyncThunk(
           description,
           image,
           wikipedia,
+          reserved: false,
         };
       });
       return filteredData;

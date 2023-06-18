@@ -22,6 +22,7 @@ export const getMissions = createAsyncThunk(
           name,
           description,
           wikipedia,
+          reserved: false,
         };
       });
       return filteredData;
