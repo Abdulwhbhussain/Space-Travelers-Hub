@@ -1,3 +1,47 @@
 .App {
   text-align: center;
 }
+
+.mission {
+  margin-left: 3%;
+}
+
+.Description {
+  margin-left: 15%;
+  margin-top: -2.2%;
+}
+
+.mission-description {
+  margin-left: 15%;
+  margin-top: -1.5%;
+}
+
+.mission-title {
+  width: 8%;
+  margin-left: 3%;
+}
+
+.mission-description {
+  width: 60%;
+}
+
+.Status {
+  margin-left: 78%;
+  margin-top: -2%;
+}
+
+.member {
+  margin-left: 78%;
+  margin-top: -1.5%;
+  font-size: 12px;
+}
+
+.join-member {
+  margin-left: 87%;
+  margin-top: -0.8%;
+}
+
+.header-container {
+  padding-bottom: 2%;
+  font-size: 24px;
+}

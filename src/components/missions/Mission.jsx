@@ -13,12 +13,15 @@ function Mission({ key, mission }) {
   };
 
   return (
+    <>
     <Row key={key}>
-      <Col>{mission.name}</Col>
-      <Col xs={6}>{mission.description}</Col>
-      <Col>{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</Col>
-      <Col><button type="button" onClick={() => toggleReserved(mission.id)}>{mission.reserved ? 'Leave Mission' : 'Join Mission'}</button></Col>
-    </Row>
+      <Col className="mission-title">{mission.name}</Col>
+      <Col xs={6} className="mission-description">{mission.description}</Col>
+      <Col className="member">{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</Col>
+      <Col className="join-member"><button type="button" onClick={() => toggleReserved(mission.id)}>{mission.reserved ? 'Leave Mission' : 'Join Mission'}</button></Col>
+    </Row>      
+    </>
+    
   );
 }
 

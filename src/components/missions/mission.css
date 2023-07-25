@@ -1,0 +1,20 @@
+.mission-container {
+    display: flex;
+  }
+  
+  .mission-row {
+    display: flex;
+    margin-top: 5%;
+  }
+  
+  .mission {
+    color: green;
+  }
+
+  .mission-title {
+
+  }
+
+  .Description {
+    margin-left: 10%;
+  }

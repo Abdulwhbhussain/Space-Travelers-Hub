@@ -8,10 +8,10 @@ import Mission from './Mission';
 function MissionsList({ missions }) {
   return (
     <Container>
-      <Row>
-        <Col>Mission</Col>
-        <Col xs={6}>Description</Col>
-        <Col>Status</Col>
+      <Row className="header-container">
+        <Col className="mission">Mission</Col>
+        <Col xs={6} className="Description">Description</Col>
+        <Col className="Status">Status</Col>
         <Col>   </Col>
       </Row>
       {missions.map((mission) => (
