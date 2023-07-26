@@ -7,7 +7,6 @@ import '../utilities/styles/Loader.css';
 function MissionsLogic() {
   const { missions, isLoading, error } = useSelector((state) => state.missions);
   const dispatch = useDispatch();
-  
   useEffect(() => {
     dispatch(getMissions());
   }, [dispatch]);

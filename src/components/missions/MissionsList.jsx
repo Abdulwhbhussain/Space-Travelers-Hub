@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Mission from './Mission';
 import Table from 'react-bootstrap/Table';
+import Mission from './Mission';
 
 function MissionsList({ missions }) {
   return (
@@ -11,7 +11,7 @@ function MissionsList({ missions }) {
           <th>Mission</th>
           <th>Description</th>
           <th>Status</th>
-          <th></th>
+          <th> </th>
         </tr>
       </thead>
       <tbody className="mission">
@@ -31,7 +31,7 @@ MissionsList.propTypes = {
       description: PropTypes.string.isRequired,
       wikipedia: PropTypes.string.isRequired,
       reserve: PropTypes.bool,
-    })
+    });
   ).isRequired,
 };
 
