@@ -46,10 +46,12 @@ const missionsSlice = createSlice({
   reducers: {
     toggleReserve: (state, action) => {
       const id = action.payload;
-      const mission = state.missions.find((mission) => mission.id === id);
-      if (mission) {
-        mission.reserved = !mission.reserved;
-      }
+      state.missions = state.missions.map((mission) => {
+        if (mission.id === id) {
+          return { ...mission, reserved: !mission.reserved };
+        }
+        return mission;
+      });
     },
   },
   extraReducers: (builder) => {

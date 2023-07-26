@@ -1,23 +1,25 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import PropTypes from 'prop-types';
 import Mission from './Mission';
+import Table from 'react-bootstrap/Table';
 
 function MissionsList({ missions }) {
   return (
-    <Container>
-      <Row className="header-container">
-        <Col className="mission">Mission</Col>
-        <Col xs={6} className="Description">Description</Col>
-        <Col className="Status">Status</Col>
-        <Col>   </Col>
-      </Row>
-      {missions.map((mission) => (
-        <Mission key={mission.id} mission={mission} />
-      ))}
-    </Container>
+    <Table className="mission-container">
+      <thead>
+        <tr>
+          <th>Mission</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody className="mission">
+        {missions.map((mission) => (
+          <Mission key={mission.id} mission={mission} />
+        ))}
+      </tbody>
+    </Table>
   );
 }
 
@@ -29,7 +31,7 @@ MissionsList.propTypes = {
       description: PropTypes.string.isRequired,
       wikipedia: PropTypes.string.isRequired,
       reserve: PropTypes.bool,
-    }),
+    })
   ).isRequired,
 };
 

@@ -1,54 +1,68 @@
-.App {
-  text-align: center;
+.mission-container {
+  width: 90%;
+  margin: 5% 0 5% 5%;
+  box-sizing: border-box;
+  padding: 15px;
 }
 
 .mission {
-  margin-left: 3%;
+  box-sizing: border-box;
 }
 
-.Description {
-  margin-left: 15%;
-  margin-top: -2.2%;
+.mission-row:nth-child(odd) {
+  background-color: #eeeded;
 }
 
-.mission-description {
-  margin-left: 15%;
-  margin-top: -1.5%;
-  width: 60%;
+table {
+  border-collapse: collapse;
 }
 
-.mission-title {
-  width: 8%;
-  margin-left: 1%;
+td,
+th {
+  border: 1px solid #000;
+  padding: 10px;
 }
 
-.Status {
-  margin-left: 78%;
-  margin-top: -2%;
+
+
+.join-mission {
+  width: 130px;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px 4px;
+  border: 1px solid #000;
+  color: black;
+  cursor: pointer;
+}
+
+.leave-member {
+  width: 8rem;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px 3px;
+  border: 1px solid red;
+  color: red;
+  cursor: pointer;
+}
+
+.active-member {
+  width: 8rem;
+  background-color: rgb(43, 7, 250);
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  padding: 5px 3px;
+  color: #fff;
 }
 
 .member {
-  margin-left: 78%;
-  margin-top: -1.5%;
-  font-size: 12px;
+  font-size: 14px;
 }
 
-.join-member {
-  margin-left: 87%;
-  margin-top: -0.8%;
+.mission-description {
+  width: 65%;
 }
 
-.header-container {
-  padding-bottom: 2%;
-  font-size: 24px;
-}
-
-.mission-row {
-  border: 1px solid rgb(237, 230, 230);
-  width: 95%;
-  margin-left: 2%;
-}
-
-.mission-row:nth-child(even) {
-  background: #ccc;
+.mission-title {
+  width: 10%;
 }
