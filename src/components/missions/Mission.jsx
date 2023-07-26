@@ -14,7 +14,7 @@ function Mission({ key, mission }) {
 
   return (
     <>
-    <Row key={key}>
+    <Row key={key} className="mission-row">
       <Col className="mission-title">{mission.name}</Col>
       <Col xs={6} className="mission-description">{mission.description}</Col>
       <Col className="member">{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</Col>
