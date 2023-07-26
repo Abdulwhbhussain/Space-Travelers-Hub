@@ -58,10 +58,10 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <NavLink to="/" exact style={{ textDecoration: 'none', color: '#3366CC' }} activeClassName="active">Rockets</NavLink>
+              <NavLink to="/" exact="true" style={{ textDecoration: 'none', color: '#3366CC' }} activeclassname="active">Rockets</NavLink>
             </li>
             <li>
-              <NavLink to="/missions" style={{ textDecoration: 'none', color: '#3366CC' }} activeClassName="active">Missions</NavLink>
+              <NavLink to="/missions" style={{ textDecoration: 'none', color: '#3366CC' }} activeclassname="active">Missions</NavLink>
             </li>
             <span>|</span>
             <li>

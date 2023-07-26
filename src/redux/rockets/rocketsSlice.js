@@ -53,6 +53,13 @@ const rocketsSlice = createSlice({
         rocket.reserved = !rocket.reserved;
       }
     },
+    setReserved: (state, action) => {
+      const { id, reserved } = action.payload;
+      const reservedRocket = state.rockets.find((rocket) => rocket.id === id);
+      if (reservedRocket) {
+        reservedRocket.reserved = reserved;
+      }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getRockets.pending, (state) => {
@@ -70,6 +77,6 @@ const rocketsSlice = createSlice({
 });
 
 // Exporting actions
-export const { toggleReserve } = rocketsSlice.actions;
+export const { toggleReserve, setReserved } = rocketsSlice.actions;
 
 export default rocketsSlice.reducer;

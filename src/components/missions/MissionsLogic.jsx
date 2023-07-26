@@ -13,6 +13,9 @@ function MissionsLogic() {
 
   useEffect(() => {
     dispatch(getMissions());
+    if (!(localStorage.getItem('missions'))) {
+      localStorage.setItem('missions', JSON.stringify(missions));
+    }
   }, [dispatch]);
 
   if (isLoading) return <div className="loader" />;
