@@ -14,15 +14,12 @@
 .mission-description {
   margin-left: 15%;
   margin-top: -1.5%;
+  width: 60%;
 }
 
 .mission-title {
   width: 8%;
   margin-left: 1%;
-}
-
-.mission-description {
-  width: 60%;
 }
 
 .Status {
@@ -46,12 +43,12 @@
   font-size: 24px;
 }
 
-.mission-row:nth-child(even) {
-  background: #ccc;
-}
-
 .mission-row {
   border: 1px solid rgb(237, 230, 230);
   width: 95%;
   margin-left: 2%;
+}
+
+.mission-row:nth-child(even) {
+  background: #ccc;
 }
