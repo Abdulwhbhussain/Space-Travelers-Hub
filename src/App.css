@@ -19,7 +19,7 @@ table {
 
 td,
 th {
-  border: 1px solid #000;
+  border: 1px solid rgb(196, 187, 187);
   padding: 10px;
 }
 
@@ -34,23 +34,34 @@ th {
 }
 
 .leave-member {
-  width: 8rem;
+  width: 100%;
   background-color: transparent;
   border-radius: 5px;
   padding: 10px 3px;
   border: 1px solid red;
   color: red;
   cursor: pointer;
+  font-size: 14px;
+}
+
+.join-member {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px 3px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .active-member {
-  width: 8rem;
+  width: 100%;
   background-color: rgb(43, 7, 250);
   border: none;
   outline: none;
   border-radius: 5px;
   padding: 5px 3px;
   color: #fff;
+  font-size: 14px;
 }
 
 .not-member {

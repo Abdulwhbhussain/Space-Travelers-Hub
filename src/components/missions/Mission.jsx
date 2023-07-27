@@ -26,10 +26,16 @@ function Mission({ mission }) {
           </Button>
         )}
       </td>
-      <td className="join">
-        <Button variant="primary" onClick={() => toggleReserved(mission.id)}>
-          {mission.reserved ? 'Leave Mission' : 'Join Mission'}
-        </Button>
+      <td className="mission-member">
+        {mission.reserved ? (
+          <Button className="leave-member" onClick={() => toggleReserved(mission.id)}>
+            Leave Mission
+          </Button>
+        ) : (
+          <Button className="join-member" variant="primary" onClick={() => toggleReserved(mission.id)}>
+            Join Mission
+          </Button>
+        )}
       </td>
     </tr>
   );
