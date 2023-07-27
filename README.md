@@ -169,6 +169,12 @@ To run the project, execute the following command:
 - Twitter: [@twitterhandle](https://twitter.com/AbdulWhbHussain)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/abdulwhbhussain)
 
+👤 **Andry Narson**
+
+- GitHub: [@rbd3](https://github.com/rbd3)
+- Twitter: [@Narson321](https://twitter.com/@Narson321)
+- LinkedIn [@Andry Narson Rabedesana](https://linkedin.com/in/andry-rabedesana)
+
 
 <!-- FUTURE FEATURES -->
 
