@@ -34,7 +34,7 @@ th {
 }
 
 .leave-member {
-  width: 8rem;
+  width: 100%;
   background-color: transparent;
   border-radius: 5px;
   padding: 10px 3px;
@@ -45,7 +45,7 @@ th {
 }
 
 .join-member {
-  width: 8rem;
+  width: 100%;
   background-color: transparent;
   border-radius: 5px;
   padding: 10px 3px;
@@ -54,7 +54,7 @@ th {
 }
 
 .active-member {
-  width: 8rem;
+  width: 100%;
   background-color: rgb(43, 7, 250);
   border: none;
   outline: none;
