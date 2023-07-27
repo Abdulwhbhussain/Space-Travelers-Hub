@@ -1,23 +1,25 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import PropTypes from 'prop-types';
+import Table from 'react-bootstrap/Table';
 import Mission from './Mission';
 
 function MissionsList({ missions }) {
   return (
-    <Container>
-      <Row>
-        <Col>Mission</Col>
-        <Col xs={6}>Description</Col>
-        <Col>Status</Col>
-        <Col>   </Col>
-      </Row>
-      {missions.map((mission) => (
-        <Mission key={mission.id} mission={mission} />
-      ))}
-    </Container>
+    <Table className="mission-container">
+      <thead>
+        <tr>
+          <th>Mission</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody className="mission">
+        {missions.map((mission) => (
+          <Mission key={mission.id} mission={mission} />
+        ))}
+      </tbody>
+    </Table>
   );
 }
 

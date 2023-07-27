@@ -1,11 +1,10 @@
 import React from 'react';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import Button from 'react-bootstrap/Button';
 import { toggleReserve } from '../../redux/missions/missionsSlice';
 
-function Mission({ key, mission }) {
+function Mission({ mission }) {
   const dispatch = useDispatch();
 
   const toggleReserved = (id) => {
@@ -13,17 +12,30 @@ function Mission({ key, mission }) {
   };
 
   return (
-    <Row key={key}>
-      <Col>{mission.name}</Col>
-      <Col xs={6}>{mission.description}</Col>
-      <Col>{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</Col>
-      <Col><button type="button" onClick={() => toggleReserved(mission.id)}>{mission.reserved ? 'Leave Mission' : 'Join Mission'}</button></Col>
-    </Row>
+    <tr className="mission-row">
+      <td className="mission-title">{mission.name}</td>
+      <td className="mission-description">{mission.description}</td>
+      <td className="member">
+        {mission.reserved ? (
+          <Button className="active-member" variant="primary" onClick={() => toggleReserved(mission.id)}>
+            Active Member
+          </Button>
+        ) : (
+          <Button className="not-member" variant="danger" onClick={() => toggleReserved(mission.id)}>
+            NOT A MEMBER
+          </Button>
+        )}
+      </td>
+      <td className="join">
+        <Button variant="primary" onClick={() => toggleReserved(mission.id)}>
+          {mission.reserved ? 'Leave Mission' : 'Join Mission'}
+        </Button>
+      </td>
+    </tr>
   );
 }
 
 Mission.propTypes = {
-  key: PropTypes.string.isRequired,
   mission: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
