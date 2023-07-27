@@ -15,8 +15,18 @@ function Mission({ mission }) {
     <tr className="mission-row">
       <td className="mission-title">{mission.name}</td>
       <td className="mission-description">{mission.description}</td>
-      <td className="member">{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</td>
-      <td className="not-member">
+      <td className="member">
+              {mission.reserved ? (
+                <Button className="active-member" variant="primary" onClick={() => toggleReserved(mission.id)}>
+                  Active Member
+                </Button>
+              ) : (
+                <Button className="not-member" variant="danger" onClick={() => toggleReserved(mission.id)}>
+                  NOT A MEMBER
+                </Button>
+              )}
+            </td>
+      <td className="join">
         <Button variant="primary" onClick={() => toggleReserved(mission.id)}>
           {mission.reserved ? 'Leave Mission' : 'Join Mission'}
         </Button>
