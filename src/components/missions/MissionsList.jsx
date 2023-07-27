@@ -31,7 +31,7 @@ MissionsList.propTypes = {
       description: PropTypes.string.isRequired,
       wikipedia: PropTypes.string.isRequired,
       reserve: PropTypes.bool,
-    });
+    })
   ).isRequired,
 };
 
