@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import { toggleReserve } from '../../redux/missions/missionsSlice';
 
-
 function Mission({ mission }) {
   const dispatch = useDispatch();
 
