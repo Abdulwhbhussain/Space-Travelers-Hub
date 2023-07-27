@@ -35,8 +35,7 @@ function Mission({ mission }) {
           <Button className="join-member" variant="primary" onClick={() => toggleReserved(mission.id)}>
             Join Mission
           </Button>
-        )
-        }
+        )}
       </td>
     </tr>
   );
