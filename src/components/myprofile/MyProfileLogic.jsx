@@ -8,7 +8,6 @@ function MyProfileLogic() {
   console.log(missions);
 
   const filteredRockets = rockets.filter((rocket) => rocket.reserved === true);
-
   const filteredMissions = missions.filter((mission) => mission.reserved === true);
   console.log(filteredMissions);
   console.log(filteredRockets);
@@ -18,32 +17,40 @@ function MyProfileLogic() {
   });
 
   return (
-    <div style={{
-      width: '100%',
-      padding: '0rem',
-      height: 'fit-content',
-      display: 'flex',
-    }}
-    >
+    <div style={{ width: '100%', padding: '0rem', height: 'fit-content', display: 'flex', marginLeft: '10%' }}>
       <div style={{ width: '40%' }}>
         <h2>My Missions</h2>
-        <hr />
-        {filteredMissions.map((mission) => (
-          <>
-            <div>{mission.name}</div>
-            <hr />
-          </>
-        ))}
+        <table style={{ width: '100%' }}>
+          <thead>
+            <tr>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredMissions.map((mission) => (
+              <tr key={mission.id}>
+                <td>{mission.name}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      <div style={{ width: '40%' }}>
+      <div style={{ width: '40%', marginLeft: '2%' }}>
         <h2>My Rockets</h2>
-        <hr />
-        {filteredRockets.map((rocket) => (
-          <>
-            <div>{rocket.name}</div>
-            <hr />
-          </>
-        ))}
+        <table style={{ width: '100%' }}>
+          <thead>
+            <tr>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredRockets.map((rocket) => (
+              <tr key={rocket.id}>
+                <td>{rocket.name}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
