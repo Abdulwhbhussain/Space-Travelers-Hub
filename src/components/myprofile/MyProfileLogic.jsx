@@ -17,7 +17,13 @@ function MyProfileLogic() {
   });
 
   return (
-    <div style={{ width: '100%', padding: '0rem', height: 'fit-content', display: 'flex', marginLeft: '10%' }}>
+    <div style={{
+      width: '100%',
+      padding: '0rem',
+      height: 'fit-content',
+      display: 'flex',
+      marginLeft: '10%',
+    }}>
       <div style={{ width: '40%' }}>
         <h2>My Missions</h2>
         <table style={{ width: '100%' }}>
