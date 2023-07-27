@@ -1,89 +1,73 @@
+// Mission.test.js
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
-import Mission from '../components/missions/Mission';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { useDispatch } from 'react-redux';
+import { toggleReserve } from '../../redux/missions/missionsSlice';
+import Mission from './Mission';
 
-const mockStore = configureStore([]);
+// Mock the useDispatch hook to avoid actual Redux store actions
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useDispatch: jest.fn(),
+}));
 
-const renderMissionComponent = (missionData) => {
-  const store = mockStore({});
-  return render(
-    <Provider store={store}>
-      <table>
-        <tbody>
-          <Mission /* eslint-disable */{...missionData} />
-        </tbody>
-      </table>
-    </Provider>,
-  );
-};
+describe('Mission Component', () => {
+  const mockDispatch = jest.fn();
 
-describe('Mission component', () => {
-  test('renders correctly when not joined', () => {
-    const missionData = {
-      id: 1,
-      name: 'Mission 1',
-      description: 'Mission 1 Description',
-      joined: false,
-    };
+  // Mock the useDispatch hook to return our mockDispatch function
+  useDispatch.mockReturnValue(mockDispatch);
 
-    const { getByText } = renderMissionComponent(missionData);
+  const mockMission = {
+    id: '1',
+    name: 'Test Mission',
+    description: 'This is a test mission',
+    wikipedia: 'https://en.wikipedia.org/wiki/Test_Mission',
+    reserved: false,
+  };
 
-    expect(getByText('Mission 1')).toBeInTheDocument();
-    expect(getByText('Mission 1 Description')).toBeInTheDocument();
-    expect(getByText('JOIN MISSION')).toBeInTheDocument();
+  test('renders mission details correctly', () => {
+    render(<Mission mission={mockMission} />);
+
+    const missionTitle = screen.getByText(mockMission.name);
+    const missionDescription = screen.getByText(mockMission.description);
+    const joinButton = screen.getByText('Join Mission');
+
+    expect(missionTitle).toBeInTheDocument();
+    expect(missionDescription).toBeInTheDocument();
+    expect(joinButton).toBeInTheDocument();
   });
 
-  test('renders correctly when joined', () => {
-    const missionData = {
-      id: 2,
-      name: 'Mission 2',
-      description: 'Mission 2 Description',
-      joined: true,
-    };
+  test('renders "Join Mission" button when the mission is not reserved', () => {
+    render(<Mission mission={mockMission} />);
 
-    const { getByText } = renderMissionComponent(missionData);
+    const joinButton = screen.getByText('Join Mission');
+    const leaveButton = screen.queryByText('Leave Mission');
 
-    expect(getByText('Mission 2')).toBeInTheDocument();
-    expect(getByText('Mission 2 Description')).toBeInTheDocument();
-    expect(getByText('LEAVE MISSION')).toBeInTheDocument();
+    expect(joinButton).toBeInTheDocument();
+    expect(leaveButton).not.toBeInTheDocument();
   });
 
-  test('dispatches joinMission when Join Mission button is clicked', () => {
-    const missionData = {
-      id: 3,
-      name: 'Mission 3',
-      description: 'Mission 3 Description',
-      joined: false,
-    };
+  test('renders "Leave Mission" button when the mission is reserved', () => {
+    const reservedMission = { ...mockMission, reserved: true };
+    render(<Mission mission={reservedMission} />);
 
-    const { getByText } = renderMissionComponent(missionData);
+    const joinButton = screen.queryByText('Join Mission');
+    const leaveButton = screen.getByText('Leave Mission');
 
-    const joinButton = getByText('JOIN MISSION');
+    expect(joinButton).not.toBeInTheDocument();
+    expect(leaveButton).toBeInTheDocument();
+  });
+
+  test('dispatches "toggleReserve" action when the buttons are clicked', () => {
+    render(<Mission mission={mockMission} />);
+
+    const joinButton = screen.getByText('Join Mission');
+    const leaveButton = screen.queryByText('Leave Mission');
+
     fireEvent.click(joinButton);
+    expect(mockDispatch).toHaveBeenCalledWith(toggleReserve(mockMission.id));
 
-    const store = mockStore({});
-    const expectedAction = store.dispatch({ type: 'missionlist/joinMission', payload: 3 });
-    expect(store.getActions()).toContainEqual(expectedAction);
-  });
-
-  test('dispatches leaveMission when Leave Mission button is clicked', () => {
-    const missionData = {
-      id: 4,
-      name: 'Mission 4',
-      description: 'Mission 4 Description',
-      joined: true,
-    };
-
-    const { getByText } = renderMissionComponent(missionData);
-
-    const leaveButton = getByText('LEAVE MISSION');
     fireEvent.click(leaveButton);
-
-    const store = mockStore({});
-    const expectedAction = store.dispatch({ type: 'missionlist/leaveMission', payload: 4 });
-    expect(store.getActions()).toContainEqual(expectedAction);
+    expect(mockDispatch).toHaveBeenCalledWith(toggleReserve(mockMission.id));
   });
 });
