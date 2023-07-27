@@ -17,47 +17,46 @@ function MyProfileLogic() {
   });
 
   return (
-    <div style={{
-      width: '100%',
-      padding: '0rem',
-      height: 'fit-content',
-      display: 'flex',
-      marginLeft: '10%',
-    }}
+    <div
+      style={{
+        width: '100%',
+        padding: '0rem',
+        height: 'fit-content',
+        display: 'flex',
+        marginLeft: '10%',
+      }}
     >
       <div style={{ width: '40%' }}>
         <h2>My Missions</h2>
-        <table style={{ width: '100%' }}>
-          <thead>
-            <tr>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredMissions.map((mission) => (
-              <tr key={mission.id}>
-                <td>{mission.name}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {filteredMissions.length === 0 ? (
+          <p>No mission joined</p>
+        ) : (
+          <table style={{ width: '100%' }}>
+            <tbody>
+              {filteredMissions.map((mission) => (
+                <tr key={mission.id}>
+                  <td>{mission.name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
       <div style={{ width: '40%', marginLeft: '2%' }}>
         <h2>My Rockets</h2>
-        <table style={{ width: '100%' }}>
-          <thead>
-            <tr>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredRockets.map((rocket) => (
-              <tr key={rocket.id}>
-                <td>{rocket.name}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {filteredRockets.length === 0 ? (
+          <p>No rockets reserved</p>
+        ) : (
+          <table style={{ width: '100%' }}>
+            <tbody>
+              {filteredRockets.map((rocket) => (
+                <tr key={rocket.id}>
+                  <td>{rocket.name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );
