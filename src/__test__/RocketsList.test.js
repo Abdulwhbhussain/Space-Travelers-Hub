@@ -1,5 +1,8 @@
 import React from 'react';
-import { render, screen, fireEvent  } from '@testing-library/react';
+import { render,
+    screen,
+    fireEvent
+} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
@@ -22,7 +25,7 @@ describe('Rocket', () => {
     render(
       <Provider store={mockStore({})}>
         <Rocket rocket={mockRocket} />
-      </Provider>
+      </Provider>,
     );
 
     // Assertions for rocket details
@@ -54,14 +57,12 @@ describe('Rocket', () => {
     render(
       <Provider store={store}>
         <Rocket rocket={mockRocket} />
-      </Provider>
+      </Provider>,
     );
 
-    // Click on the "Reserve Rocket" button
     const reserveRocketButton = screen.getByText('Reserve Rocket');
     fireEvent.click(reserveRocketButton);
 
-    // Ensure that the action was dispatched with the correct rocket ID
     const actions = store.getActions();
     expect(actions).toEqual([{ type: 'rockets/toggleReserve', payload: '2' }]);
   });
