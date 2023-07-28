@@ -27,7 +27,7 @@ describe('MissionsList', () => {
     render(
       <Provider store={store}>
         <MissionsList missions={mockMissions} />
-      </Provider>
+      </Provider>,
     );
 
     const mission1Name = screen.getByText('Mission 1');

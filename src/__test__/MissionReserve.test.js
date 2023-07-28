@@ -21,7 +21,7 @@ describe('Mission', () => {
     render(
       <Provider store={mockStore({})}>
         <Mission mission={mockMission} />
-      </Provider>
+      </Provider>,
     );
 
     const missionTitle = screen.getByText('Mission 1');
@@ -50,7 +50,7 @@ describe('Mission', () => {
     render(
       <Provider store={store}>
         <Mission mission={mockMission} />
-      </Provider>
+      </Provider>,
     );
 
     const joinMissionButton = screen.getByText('Join Mission');
