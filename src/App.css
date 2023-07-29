@@ -1,0 +1,83 @@
+.mission-container {
+  width: 90%;
+  margin: 5% 0 5% 5%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.mission {
+  box-sizing: border-box;
+}
+
+.mission-row:nth-child(odd) {
+  background-color: #eeeded;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid rgb(196, 187, 187);
+  padding: 10px;
+}
+
+.join-mission {
+  width: 130px;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px 4px;
+  border: 1px solid #000;
+  color: black;
+  cursor: pointer;
+}
+
+.leave-member {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px 3px;
+  border: 1px solid red;
+  color: red;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.join-member {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px 3px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.active-member {
+  width: 100%;
+  background-color: rgb(43, 7, 250);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 3px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.not-member {
+  background-color: rgb(79, 84, 84);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.member {
+  font-size: 14px;
+}
+
+.mission-description {
+  width: 65%;
+}
+
+.mission-title {
+  width: 10%;
+}
